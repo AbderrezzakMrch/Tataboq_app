@@ -6,22 +6,24 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.indigo,
         appBar: AppBar(
-          title: Text("Tap & Match"),
+          title: const Text("Tap & Match"),
           backgroundColor: Colors.indigo[800],
         ),
-        body: ImagePage(),
+        body: const ImagePage(),
       ),
     ),
   );
 }
 
 class ImagePage extends StatelessWidget {
+  const ImagePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Text(
+        const Text(
           'Try Again',
           style: TextStyle(
             fontSize: 42.0,
@@ -31,15 +33,21 @@ class ImagePage extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Image.asset('images/data-science.png'),
-            )),
+              child: TextButton(
+                onPressed: () {
+                  print('You pressed left pic');
+                },
+                child: Image.asset('images/data-science.png'),
+              ),
+            ),
             Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Image.asset('images/monitor.png'),
-            )),
+              child: TextButton(
+                onPressed: () {
+                  print("You pressed left right");
+                },
+                child: Image.asset('images/monitor.png'),
+              ),
+            ),
           ],
         ),
       ],
