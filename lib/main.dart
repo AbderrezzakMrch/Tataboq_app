@@ -18,6 +18,31 @@ void main() {
 class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          'Try Again',
+          style: TextStyle(
+            fontSize: 42.0,
+            color: Colors.white,
+          ),
+        ),
+        Row(
+          children: [
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.asset('images/data-science.png'),
+            )),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.asset('images/monitor.png'),
+            )),
+          ],
+        ),
+      ],
+    );
   }
 }
