@@ -9,15 +9,21 @@ void main() {
           title: const Text("Tap & Match"),
           backgroundColor: Colors.indigo[800],
         ),
-        body: const ImagePage(),
+        body: ImagePage(),
       ),
     ),
   );
 }
 
-class ImagePage extends StatelessWidget {
+class ImagePage extends StatefulWidget {
   const ImagePage({super.key});
 
+  @override
+  State<ImagePage> createState() => _ImagePageState();
+}
+
+class _ImagePageState extends State<ImagePage> {
+  int leftImageNumber = 1;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,9 +41,12 @@ class ImagePage extends StatelessWidget {
             Expanded(
               child: TextButton(
                 onPressed: () {
+                  setState(() {
+                    leftImageNumber = 4;
+                  });
                   print('You pressed left pic');
                 },
-                child: Image.asset('images/data-science.png'),
+                child: Image.asset('images/image-$leftImageNumber.png'),
               ),
             ),
             Expanded(
@@ -45,7 +54,7 @@ class ImagePage extends StatelessWidget {
                 onPressed: () {
                   print("You pressed left right");
                 },
-                child: Image.asset('images/monitor.png'),
+                child: Image.asset('images/image-2.png'),
               ),
             ),
           ],
