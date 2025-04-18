@@ -41,3 +41,33 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+
+# Flutter/Dart/Pub related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+ios/Pods/
+ios/.symlinks/
+
+# IntelliJ/Android Studio
+.idea/
+
+# VSCode
+.vscode/
+
+# macOS
+macos/Flutter/ephemeral/
+
+# Windows
+windows/Flutter/ephemeral/
+
+# Generated file from flutter build
+flutter_*.log
+
+# Android Studio Gradle files
+.gradle/
